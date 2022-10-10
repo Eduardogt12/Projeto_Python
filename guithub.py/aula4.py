@@ -1,50 +1,34 @@
-from gettext import install
 import tkinter as tk
-import mysql.connector
-#pip install
-
-def conexão():
-        conexão = mysql.connector.connect(host = "localhost", user = "root", passwd ="", db = "")
-
-
-
+import pymysql.connector
+#from PIL import ImageTk, ImageTk
+#from nump import ImageTk 
 
 
 def cadastrarUsuarios():
     janelaUsuarios = tk.Toplevel(app)
 
-    lblNome = tk.Label(janelaUsuarios,text="Informe o seu nome: "
-            ,font="Times"
-            ,bg="white",foreground="black")
+    lblNome = tk.Label(janelaUsuarios,text="Informe o seu nome: ",font="Times" ,bg="white",foreground="black")
     lblNome.place(x=100,y=50)
 
     entryNome = tk.Entry(janelaUsuarios)
     entryNome.place(x=230,y=55)
     
-    lblSobrenome = tk.Label(janelaUsuarios,text="Informe o seu sobrenome: "
-            ,font="Times"
-            ,bg="white",foreground="black")
+    lblSobrenome = tk.Label(janelaUsuarios,text="Informe o seu sobrenome: " ,font="Times" ,bg="white",foreground="black")
     lblSobrenome.place(x=100,y=75)
     entrySobrenome = tk.Entry(janelaUsuarios)
     entrySobrenome.place(x=260, y=75)
 
-    lblDataNascimento = tk.Label(janelaUsuarios,text="Informe sua data de nascimento"
-            ,font="Times"
-            ,bg="white", foreground="black")
+    lblDataNascimento = tk.Label(janelaUsuarios,text="Informe sua data de nascimento",font="Times",bg="white", foreground="black")
     lblDataNascimento.place(x=100, y=100)
     entryDataNascimento = tk.Entry(janelaUsuarios)
     entryDataNascimento.place(x=300, y=100)
 
-    lblCidade = tk.Label(janelaUsuarios,text="Informe a sua cidade"
-            ,font="Times"
-            ,bg="white", foreground="black")
+    lblCidade = tk.Label(janelaUsuarios,text="Informe a sua cidade",font="Times",bg="white", foreground="black")
     lblCidade.place(x=100,y=125)
     entryCidade = tk.Entry(janelaUsuarios)
     entryCidade.place(x=230,y=125)
 
-    lblEstado = tk.Label(janelaUsuarios, text="Informe o estado: "
-            ,font="Times"
-            ,bg="white",foreground="black")
+    lblEstado = tk.Label(janelaUsuarios, text="Informe o estado: ",font="Times",bg="white",foreground="black")
     lblEstado.place(x=100, y=150)
     entryEstado = tk.Entry(janelaUsuarios)
     entryEstado.place(x=230, y=150)
@@ -55,8 +39,7 @@ def cadastrarUsuarios():
         print("A data de nascimento informada foi: ", entryDataNascimento.get())
         print("A cidade informada foi: ", entryCidade.get())
         print("O estado informado foi: ",entryEstado.get())
-    btnSalvar = tk.Button(janelaUsuarios,width=20
-            ,text="Salvar", command=salvarUsuario)
+    btnSalvar = tk.Button(janelaUsuarios,width=20,text="Salvar", command=salvarUsuario)
     btnSalvar.place(x=100,y=175)
     
     #entryNome.insert("end","teste")
